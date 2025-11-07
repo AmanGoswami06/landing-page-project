@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Landing Page Project</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">MyBrand</div>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a class="btn-outline" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">Build beautiful websites from a design.</h1>
+        <p class="hero-sub">Take a design image, add your content, use flexbox and CSS to recreate it. Pixel-perfect not required — get it close and ship it.</p>
+        <div class="hero-cta">
+          <a class="btn-primary" href="#features">Get Started</a>
+          <a class="btn-ghost" href="#learn-more">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero.jpg" alt="Hero preview">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <div class="container features-grid">
+      <article class="feature">
+        <img src="images/feature1.jpg" alt="feature 1">
+        <h3>Section One</h3>
+        <p>Short description about this feature or content block. Keep it concise and helpful.</p>
+      </article>
+
+      <article class="feature">
+        <img src="images/feature2.jpg" alt="feature 2">
+        <h3>Section Two</h3>
+        <p>Another small paragraph that explains what this part does. Replace with your own text.</p>
+      </article>
+
+      <article class="feature">
+        <img src="images/feature3.jpg" alt="feature 3">
+        <h3>Section Three</h3>
+        <p>Third piece of content. Use real images if you want — credit them in README.md.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container about-inner">
+      <div class="about-text">
+        <h2>How to approach this project</h2>
+        <p>Start with HTML — create the structure for the hero, sections, footer. Then add CSS to position elements using flexbox. One stylesheet is enough.</p>
+        <ul>
+          <li>Write HTML content first</li>
+          <li>Style with CSS (Flexbox)</li>
+          <li>Use images from Pexels/Unsplash and credit them</li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <img src="images/about.jpg" alt="about image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Ready to build?</h2>
+      <p>Get your project close to the design and push it to GitHub. Deploy with GitHub Pages when you're done.</p>
+      <a class="btn-primary" href="#contact">Start Project</a>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="contact">
+    <div class="container contact-inner">
+      <h2>Contact Us</h2>
+      <p>Have any questions? Send us a message and we’ll get back to you soon!</p>
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+      <p class="form-status" id="formStatus"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> MyBrand. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // set year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // contact form simple JS
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      status.textContent = "Sending...";
+      setTimeout(() => {
+        status.textContent = "✅ Thank you! Your message has been sent.";
+        form.reset();
+      }, 1500);
+    });
+  </script>
+
+ 
+
+
+</body>
+</html>
